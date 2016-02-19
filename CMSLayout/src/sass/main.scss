@@ -1,0 +1,24 @@
+/* 
+	Theme Name: Sample CMS layout
+	Author: Magdalena Fas
+	Version: 0.1
+	For layout option use:
+		.three-column
+		.two-column-left / .two-column-right
+		.one-column
+	For DOM manipulation:
+		#js-side-left
+		#js-side-right
+*/
+
+/* BASE - Base styles, variables, mixins, etc. */
+
+@import "base/_normalize.scss";
+@import "base/_presentation.scss";
+
+/* LAYOUT - Page layout styles */
+
+@import "layouts/_header-footer.scss";
+@import "layouts/_three-column.scss";
+@import "layouts/_one-column.scss";
+@import "layouts/_two-column.scss";

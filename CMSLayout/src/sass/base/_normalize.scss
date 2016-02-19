@@ -1,0 +1,23 @@
+/* Reset */
+
+html, body, div, aside, footer, header, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 20px;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+aside, footer, header, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+* {
+	box-sizing: border-box;		
+}
+

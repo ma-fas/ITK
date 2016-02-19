@@ -1,0 +1,62 @@
+/* 
+	Basic three-column layout 
+	Use .three-column	
+*/
+
+.container {
+	position: relative;
+	clear: both;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.container-middle,
+.container-side {
+	position: relative;
+	width: 96%;
+	left: 2%;
+}
+
+.column-main,
+.column-side {
+	position: relative;
+	clear: both;
+	padding: 1em 0;
+	width: 100%;
+}
+
+@media screen and(min-width:768px) {
+	.container {
+		display: flex;
+	}
+	.three-column {
+		.container-middle {
+			width: 50%;
+			max-width: none;
+			left: 25%;
+			float: left;
+		}
+
+		.container-side {
+			width: 25%;
+			left: 0%;
+			float: left;
+		}
+		
+		.container-left {
+			left: -50%;
+		}
+
+		.column-main {
+			width: 93%;
+			left: 3.5%;
+		}
+
+		.column-side {
+			width: 84%;
+			left: 8%;
+		}
+	}
+}

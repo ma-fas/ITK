@@ -1,0 +1,32 @@
+/* 
+	One-column layout 
+	Use .one-column	
+*/
+
+.one-column {
+	left: 0;
+	padding: 0;
+	
+	.container-left,
+	.container-right {
+		display: none;
+	}
+}
+
+@media screen and(min-width: 768px) {
+	.one-column .column-main {
+		width: 96%;
+		left: 2%;
+	}
+} 
+
+@media screen and(min-width: 1200px) {
+	.one-column {
+		float: none;
+		.column-main {
+			width: 100%;
+			left: 0%;
+		}
+	}
+	
+}

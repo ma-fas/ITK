@@ -1,0 +1,205 @@
+/* 
+	Theme Name: Sample CMS layout
+	Author: Magdalena Fas
+	Version: 0.1
+	For layout option use:
+		.three-column
+		.two-column-left / .two-column-right
+		.one-column
+	For DOM manipulation:
+		#js-side-left
+		#js-side-right
+*/
+/* BASE - Base styles, variables, mixins, etc. */
+/* Reset */
+html, body, div, aside, footer, header, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+  font: inherit;
+  vertical-align: baseline; }
+
+aside, footer, header, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+
+/* Styling for layout's presentation only */
+.header {
+  background: #fff;
+  border-bottom: 2px solid #000; }
+
+.footer {
+  background: #fff;
+  border-top: 2px solid #000; }
+
+.container-fluid {
+  min-height: 10vh;
+  background: #eee; }
+
+.container-middle {
+  background: #fff;
+  min-height: 60vh; }
+
+.container-left {
+  background: #ddd;
+  min-height: 15vh; }
+
+.container-right {
+  background: #ccc;
+  min-height: 15vh; }
+
+.column-main,
+.column-side {
+  background: #aaa; }
+
+/* LAYOUT - Page layout styles */
+/* Header & footer styles */
+.header {
+  width: 100%;
+  clear: both;
+  float: left; }
+
+.footer {
+  clear: both;
+  float: left;
+  width: 100%; }
+
+.container-fluid {
+  position: relative;
+  width: 96%;
+  left: 2%; }
+
+@media screen and (min-width: 768px) {
+  .container-fluid {
+    left: 0%;
+    max-width: 1200px;
+    margin: 0 auto; } }
+
+/* 
+	Basic three-column layout 
+	Use .three-column	
+*/
+.container {
+  position: relative;
+  clear: both;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.container-middle,
+.container-side {
+  position: relative;
+  width: 96%;
+  left: 2%; }
+
+.column-main,
+.column-side {
+  position: relative;
+  clear: both;
+  padding: 1em 0;
+  width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .three-column .container-middle {
+    width: 50%;
+    max-width: none;
+    left: 25%;
+    float: left; }
+  .three-column .container-side {
+    width: 25%;
+    left: 0%;
+    float: left; }
+  .three-column .container-left {
+    left: -50%; }
+  .three-column .column-main {
+    width: 93%;
+    left: 3.5%; }
+  .three-column .column-side {
+    width: 84%;
+    left: 8%; } }
+
+/* 
+	One-column layout 
+	Use .one-column	
+*/
+.one-column {
+  left: 0;
+  padding: 0; }
+  .one-column .container-left,
+  .one-column .container-right {
+    display: none; }
+
+@media screen and (min-width: 768px) {
+  .one-column .column-main {
+    width: 96%;
+    left: 2%; } }
+
+@media screen and (min-width: 1200px) {
+  .one-column {
+    float: none; }
+    .one-column .column-main {
+      width: 100%;
+      left: 0%; } }
+
+/* 
+	Two-column layout
+	Use .two-column-left for left sidebar 
+	or .two-column-right for right sidebar	
+*/
+.two-column .container-middle, .two-column-left .container-middle, .two-column-right .container-middle,
+.two-column .container-side, .two-column-left .container-side, .two-column-right .container-side {
+  left: 2%; }
+
+.two-column-left .container-right {
+  display: none; }
+
+.two-column-right .container-left {
+  display: none; }
+
+@media screen and (min-width: 768px) {
+  .two-column, .two-column-left, .two-column-right {
+    left: 0; }
+    .two-column .container-middle, .two-column-left .container-middle, .two-column-right .container-middle {
+      width: 70%;
+      left: 0;
+      float: left; }
+      .two-column .container-middle .column-main, .two-column-left .container-middle .column-main, .two-column-right .container-middle .column-main {
+        width: 94%;
+        left: 3%; }
+    .two-column .container-side, .two-column-left .container-side, .two-column-right .container-side {
+      width: 30%;
+      left: 0;
+      float: left; }
+      .two-column .container-side .column-side, .two-column-left .container-side .column-side, .two-column-right .container-side .column-side {
+        width: 86%;
+        left: 7%; }
+  .two-column-left {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse; } }
+
+@media screen and (min-width: 1200px) {
+  .two-column, .two-column-left, .two-column-right {
+    float: none; }
+    .two-column .container-middle .column-main, .two-column-left .container-middle .column-main, .two-column-right .container-middle .column-main {
+      width: 95%;
+      left: 2.5%; } }

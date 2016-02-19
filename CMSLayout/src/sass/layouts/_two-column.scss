@@ -1,0 +1,64 @@
+/* 
+	Two-column layout
+	Use .two-column-left for left sidebar 
+	or .two-column-right for right sidebar	
+*/
+
+.two-column {
+	.container-middle,
+	.container-side {
+		left: 2%;
+	}
+}
+
+.two-column-left {
+	@extend .two-column;
+	.container-right {
+		display: none;
+	}
+}
+
+.two-column-right {
+	@extend .two-column;
+	.container-left {
+		display: none;
+	}
+}
+
+@media screen and(min-width: 768px) {
+	.two-column {
+		left: 0;
+		.container-middle {
+			width: 70%;
+			left: 0;
+			float: left;
+			.column-main {
+				width: 94%;
+				left: 3%;
+			}
+		}
+		.container-side {
+			width: 30%;
+			left: 0;
+			float: left;
+			.column-side {
+				width: 86%;
+				left: 7%;
+			}
+		}
+	}
+
+	.two-column-left {
+		flex-direction: row-reverse;
+	} 
+}
+
+@media screen and(min-width: 1200px) {
+	.two-column {
+		float: none;
+		.container-middle .column-main {
+			width: 95%;
+			left: 2.5%;
+		}
+	}
+}

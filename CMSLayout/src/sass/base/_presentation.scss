@@ -1,0 +1,36 @@
+/* Styling for layout's presentation only */
+
+.header {
+	background: #fff;
+	border-bottom: 2px solid #000;
+}
+
+.footer {
+	background: #fff;
+	border-top: 2px solid #000;
+}
+
+.container-fluid {
+	min-height: 10vh;
+	background: #eee;
+}
+
+.container-middle {
+	background: #fff;
+	min-height: 60vh;
+}
+
+.container-left {
+	background: #ddd;
+	min-height: 15vh;
+}
+
+.container-right {
+	background: #ccc;
+	min-height: 15vh;
+}
+
+.column-main,
+.column-side {
+	background: #aaa;
+}

@@ -1,0 +1,27 @@
+/* Header & footer styles */
+
+.header {
+	width: 100%;
+	clear: both;
+	float: left;
+}
+
+.footer {
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+.container-fluid {
+	position: relative;
+	width: 96%;
+	left: 2%;
+}
+
+@media screen and(min-width: 768px) {
+	.container-fluid {
+		left: 0%;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
